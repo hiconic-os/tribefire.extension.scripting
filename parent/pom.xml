@@ -31,7 +31,7 @@ limitations under the License.
 		<V.tribefire.setup.classic.env>[3.0, 3.1)</V.tribefire.setup.classic.env>
 		<V.tribefire.cortex.testing>[3.0, 3.1)</V.tribefire.cortex.testing>
 		<!-- Third party libraries -->
-		<V.org.apache.groovy>4.0.26</V.org.apache.groovy>
+		<V.org.apache.groovy>4.0.27</V.org.apache.groovy>
 	</properties>
     <licenses>
         <license>
