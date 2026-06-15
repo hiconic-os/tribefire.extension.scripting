@@ -66,13 +66,11 @@ public interface ScriptingEngineResolver {
 	 * 
 	 * @param <S>
 	 *            Denotes the script type.
-	 * @param <T>
-	 *            Denotes the return type of the script.
 	 * @param script
 	 *            Is the script object.
 	 * @return Reason containing the {@link CompiledScript}.
 	 */
-	default <S extends Script, T> Maybe<CompiledScript> compile(S script) {
+	default <S extends Script> Maybe<CompiledScript> compile(S script) {
 		return resolveEngine(script.entityType()).flatMap(engine -> engine.compile(script));
 	}
 }

@@ -19,6 +19,8 @@ import java.util.Map;
 
 import com.braintribe.gm.model.reason.Maybe;
 
+import tribefire.extension.scripting.model.ScriptCompileError;
+import tribefire.extension.scripting.model.ScriptRuntimeError;
 import tribefire.extension.scripting.model.deployment.Script;
 
 /**
@@ -35,7 +37,7 @@ public interface ScriptingEngine<S extends Script> {
 
 	/**
 	 * To evaluate a script given the parameters in bindings. 
-	 * The method may return a {@linke ScriptingRuntimeError}.
+	 * The method may return a {@link ScriptRuntimeError}.
 	 * 
 	 * @param <T>
 	 *            Arbitrary return type, depending on the actual script to be executed. 
@@ -44,7 +46,7 @@ public interface ScriptingEngine<S extends Script> {
 	 * @param bindings
 	 *            Parameter bindings as map, which are passed as inputs to the script. 
 	 *            
-	 * @return A Reasoned return object, wiht a type that depends on the actual script object. 
+	 * @return A Reasoned return object, with a type that depends on the actual script object. 
 	 */
 	default <T> Maybe<T> evaluate(S script, Map<String, Object> bindings) {
 		return compile(script).flatMap(compiledScript -> compiledScript.evaluate(bindings));
